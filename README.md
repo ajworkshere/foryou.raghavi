@@ -63,96 +63,6 @@
             z-index: 2;
         }
 
-        nav {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(31, 38, 135, 0.37);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
-            min-height: 60px;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .nav-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            flex-direction: column;
-            padding: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            list-style: none;
-        }
-
-        .nav-menu.active {
-            display: flex;
-        }
-
-        .nav-menu li {
-            margin: 8px 0;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            display: block;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
-        }
-
-        .mobile-menu-toggle {
-            display: block;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #667eea;
-        }
-
-        .page-section {
-            display: none;
-            min-height: 100vh;
-            padding: 80px 0 30px;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .page-content {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(20px);
@@ -163,7 +73,7 @@
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             position: relative;
             overflow: hidden;
-            margin: 0 10px;
+            margin: 20px 10px;
         }
 
         .page-content::before {
@@ -202,19 +112,6 @@
             50% { filter: hue-rotate(180deg); }
         }
 
-        h2 {
-            color: #764ba2;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        h3 {
-            color: #667eea;
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-
         p {
             font-size: 1rem;
             margin-bottom: 1.2rem;
@@ -224,7 +121,7 @@
 
         .hero {
             text-align: center;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         .hero h1 {
@@ -253,273 +150,6 @@
             color: #666;
             margin-bottom: 2rem;
             padding: 0 10px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
-            background-size: 300% 300%;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            animation: gradientMove 3s ease infinite;
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
-        }
-
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
-        }
-
-        .effort-showcase {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border: 2px solid rgba(255, 107, 107, 0.3);
-        }
-
-        .effort-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px 15px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-3px) scale(1.05);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-            animation: countUp 2s ease-out;
-        }
-
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 100%;
-            margin: 20px 0;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            top: 0;
-            bottom: 0;
-            left: 20px;
-            animation: timelineGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes timelineGlow {
-            0%, 100% { box-shadow: 0 0 8px rgba(102, 126, 234, 0.5); }
-            50% { box-shadow: 0 0 15px rgba(118, 75, 162, 0.8); }
-        }
-
-        .timeline-item {
-            padding: 10px 10px 10px 50px;
-            position: relative;
-            width: 100%;
-            margin-bottom: 25px;
-            animation: slideIn 0.8s ease-out;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            left: 11px;
-            background: #667eea;
-            border: 3px solid white;
-            top: 15px;
-            border-radius: 50%;
-            animation: heartbeat 2s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background: white;
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline-date {
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 8px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .feelings-section {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(84, 160, 255, 0.1));
-            border-radius: 15px;
-            padding: 25px;
-            margin: 25px 0;
-            border: 2px solid rgba(255, 107, 107, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feelings-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            animation: feelingsShimmer 6s ease infinite;
-            pointer-events: none;
-        }
-
-        @keyframes feelingsShimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .letter {
-            background: linear-gradient(135deg, #f8f9fa, #fff);
-            border-left: 4px solid #667eea;
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
-            font-size: 1rem;
-            line-height: 1.6;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .letter::before {
-            content: '💌';
-            position: absolute;
-            top: -8px;
-            right: 15px;
-            font-size: 1.5rem;
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .response-section {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border-radius: 12px;
-            padding: 25px;
-            margin-top: 25px;
-            text-align: center;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 25px;
-        }
-
-        .contact-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            width: 80%;
-            max-width: 250px;
-        }
-
-        .contact-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .contact-btn:hover::before {
-            left: 100%;
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 12px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .floating {
@@ -560,7 +190,7 @@
             margin-bottom: 0;
         }
 
-        /* Enhanced mobile optimizations */
+        /* Mobile optimizations */
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
@@ -570,39 +200,17 @@
                 font-size: 1.8rem;
             }
 
-            h2 {
-                font-size: 1.4rem;
-            }
-
-            h3 {
-                font-size: 1.2rem;
-            }
-
             .page-content {
-                margin: 0 5px;
+                margin: 10px 5px;
                 padding: 20px 15px;
-            }
-
-            .effort-stats {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .letter {
-                padding: 20px;
-                font-size: 0.95rem;
             }
 
             .confession-box p {
                 font-size: 1rem;
             }
 
-            .timeline-item {
-                padding-left: 45px;
+            .hero {
+                padding: 20px 0;
             }
         }
 
@@ -619,11 +227,51 @@
             .page-content {
                 padding: 15px 12px;
             }
+        }
 
-            .effort-showcase,
-            .feelings-section,
-            .response-section {
-                padding: 15px;
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
+            background-size: 300% 300%;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: gradientMove 3s ease infinite;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            margin: 8px;
+            min-width: 200px;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            .cta-button {
+                font-size: 0.85rem;
+                padding: 10px 20px;
+                min-width: 180px;
             }
         }
 
@@ -639,22 +287,8 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">💖 For Raghavi</div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-                <li><a href="#effort" class="nav-link" data-section="effort">My Journey</a></li>
-                <li><a href="#meeting" class="nav-link" data-section="meeting">Our Beginning</a></li>
-                <li><a href="#feelings" class="nav-link" data-section="feelings">My Heart</a></li>
-                <li><a href="#letter" class="nav-link" data-section="letter">My Letter</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
-        </div>
-    </nav>
-
     <!-- Home Section -->
-    <section id="home" class="page-section active">
+    <section id="home">
         <div class="container">
             <div class="page-content">
                 <div class="hero">
@@ -669,114 +303,19 @@
                     
                     <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I tried countless ideas, themes, debugged code until 6 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
                     
-                    <button class="cta-button nav-link" data-section="effort">See My Journey</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Effort Section -->
-    <section id="effort" class="page-section">
-        <div class="container">
-            <div class="page-content fade-in">
-                <h1>The Journey I Took For You</h1>
-                
-                <div class="effort-showcase">
-                    <h3>🚀 From Zero to This Website</h3>
-                    <p>Just one night ago, I knew absolutely nothing about web development. The most "coding" I had ever done was changing my social media bio. But after meeting you, I was determined to create something that would show you how serious I am about getting to know you better.</p>
-                    <p>So I started from scratch. <span class="highlight-text">I literally Googled "how to make a website"</span> and began one of the most challenging yet rewarding nights I've ever had.</p>
-                </div>
-
-                <div class="effort-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">12+</div>
-                        <div>Hours Straight</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1,247</div>
-                        <div>Lines of Code</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">47</div>
-                        <div>YouTube Tutorials</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1</div>
-                        <div>Amazing Girl</div>
-                    </div>
-                </div>
-
-                <div class="effort-showcase">
-                    <h3>📚 What I Had to Learn (In One Night!)</h3>
-                    <p><strong>Hours 1-3:</strong> Basic HTML - I spent hours just learning how to make text appear on a webpage. My first "Hello World" felt like climbing Mount Everest.</p>
-                    <p><strong>Hours 4-8:</strong> CSS Styling - This is where I learned about colors, animations, and layouts. I probably spent 2 more hours just getting the background gradient right because I wanted it to be perfect for you.</p>
-                    <p><strong>Hours 9-12:</strong> JavaScript & Interactivity - Navigation, smooth scrolling, mobile responsiveness... I learned it all while thinking about you.</p>
+                    <p>This website represents more than just code - it represents dedication, genuine interest, and the belief that extraordinary people deserve extraordinary gestures. <span class="highlight-text">You inspired me to learn something completely new in one night</span>, and that says everything about how I feel about you.</p>
                     
-                    <h3>⏰ The All-Nighter I Pulled</h3>
-                    <p>While everyone else was sleeping, I was here at my desk with multiple monitors, energy drinks, and a head full of thoughts about you. Every error message I debugged, every animation I perfected, every word I wrote - it was all done with the hope that you'd see how much you mean to me.</p>
+                    <p>I hope this shows you that I'm serious about getting to know you better, and that you're worth every hour I spent learning to create this for you.</p>
                     
-                    <p><span class="highlight-text">I've never stayed up all night learning something for someone before</span>, and honestly, that tells me everything I need to know about how I feel about you.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meeting Section -->
-    <section id="meeting" class="page-section">
-        <div class="container">
-            <div class="page-content fade-in">
-                <h1>The Day Everything Changed</h1>
-                <p style="text-align: center; margin-bottom: 30px; font-style: italic; font-size: 1.1rem;">The day I met you and knew I had to do something special</p>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Before You</div>
-                            <h3>Just Another Day</h3>
-                            <p>I was having the most ordinary day. Just going through my routine classes, thinking about assignments, maybe grabbing some food later. I had no idea that someone was about to completely change my perspective on everything and inspire me to learn an entire programming language in one night.</p>
-                        </div>
-                    </div>
+                    <p>I hope you'll accept my invitation to meet for coffee. I'd love to get to know you better.</p>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">The Moment</div>
-                            <h3>I Saw You</h3>
-                            <p>And then there was you, Raghavi. Something about the way you carried yourself, the way you smiled, the way you seemed so genuinely kind and intelligent. I couldn't stop thinking about you, and I knew that if I was going to approach someone as amazing as you, I couldn't do it the ordinary way.</p>
-                            <p><span class="highlight-text">That's when I decided to do something extraordinary</span> - something that would show you exactly how much you've already impacted my life.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">The Decision</div>
-                            <h3>Learning to Code</h3>
-                            <p>I went home that day and made a decision that surprised even me. Instead of just asking for your number like everyone else probably does, I was going to create something unique. I was going to build you a website from scratch.</p>
-                            <p>I had <span class="highlight-text">zero coding experience</span>, but I had determination and an entire night ahead of me. I thought, "If Raghavi is worth it (and she absolutely is), then she's worth learning something completely new."</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-date">Right Now</div>
-                            <h3>Here We Are</h3>
-                            <p>After 12 straight hours of learning, coding, debugging, and probably consuming way too much caffeine, here we are. This website exists because you inspired me to push myself beyond what I thought was possible.</p>
-                            <p>I hope when you see this, you understand that this isn't just about the code or the website - it's about showing you that you're worth the effort, worth the sleepless night, and worth taking a chance on something completely new.</p>
-                        </div>
+                    <div class="contact-section">
+                        <a href="tel:+919006291057" class="cta-button">📱 Call Me: 79006291057</a>
+                        <a href="sms:+919006291057" class="cta-button">💬 Text Me: 79006291057</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Feelings Section -->
-    <section id="feelings" class="page-section">
-        <div class="container">
-            <div class="page-content fade-in">
-                <h1>What You Mean to Me</h1>
-                
-                <div class="feelings-section">
-                    <h3>💫 The Impact You've Had</h3>
-                    <p>Raghavi, in the short time since I've known about you, you've already changed something in me. You've inspired me to be better, to try harder, and to believe that some people are worth going the extra mile for.</p>
-                    
-                    <p>There's something
-                    
+</body>
+</html>
