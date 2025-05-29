@@ -270,6 +270,7 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             font-size: 0.9rem;
             cursor: pointer;
+            border: none;
         }
 
         @keyframes gradientMove {
@@ -770,4 +771,12 @@
     <!-- Feelings Section -->
     <section id="feelings" class="page-section">
         <div class="container">
-            <div class="page-
+            <div class="page-content fade-in">
+                <h1>What You Mean to Me</h1>
+                
+                <div class="feelings-section">
+                    <h3>💫 The Impact You've Had</h3>
+                    <p>Raghavi, in the short time since I've known about you, you've already changed something in me. You've inspired me to be better, to try harder, and to believe that some people are worth going the extra mile for.</p>
+                    
+                    <p>There's something
+                    
