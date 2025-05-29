@@ -119,6 +119,7 @@
             display: block;
             padding: 10px;
             border-radius: 8px;
+            cursor: pointer;
         }
 
         .nav-menu a:hover,
@@ -268,6 +269,7 @@
             box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             font-size: 0.9rem;
+            cursor: pointer;
         }
 
         @keyframes gradientMove {
@@ -640,11 +642,11 @@
         <div class="container">
             <div class="logo">💖 For Raghavi</div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#effort" class="nav-link">My Journey</a></li>
-                <li><a href="#meeting" class="nav-link">Our Beginning</a></li>
-                <li><a href="#feelings" class="nav-link">My Heart</a></li>
-                <li><a href="#letter" class="nav-link">My Letter</a></li>
+                <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+                <li><a href="#effort" class="nav-link" data-section="effort">My Journey</a></li>
+                <li><a href="#meeting" class="nav-link" data-section="meeting">Our Beginning</a></li>
+                <li><a href="#feelings" class="nav-link" data-section="feelings">My Heart</a></li>
+                <li><a href="#letter" class="nav-link" data-section="letter">My Letter</a></li>
             </ul>
             <button class="mobile-menu-toggle" id="menuToggle">☰</button>
         </div>
@@ -666,7 +668,7 @@
                     
                     <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I tried countless ideas, themes, debugged code until 6 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
                     
-                    <a href="#effort" class="cta-button nav-link">See My Journey</a>
+                    <button class="cta-button nav-link" data-section="effort">See My Journey</button>
                 </div>
             </div>
         </div>
@@ -768,13 +770,4 @@
     <!-- Feelings Section -->
     <section id="feelings" class="page-section">
         <div class="container">
-            <div class="page-content fade-in">
-                <h1>What You Mean to Me</h1>
-                
-                <div class="feelings-section">
-                    <h3>💭 My Honest Thoughts</h3>
-                    <p>Raghavi, I want you to know that this website isn't just about showing off what I learned in one night. It's about showing you that you've already made such an impact on my life that I was willing to step completely outside my comfort zone.</p>
-                    
-                    <p>I've met a lot of people, but there's something different about you. Maybe it's the way you seem so genuine, or how your presence just feels... right. I know we've only just met, but I can't shake the feeling that there's something special here worth exploring.</p>
-                    
-                    <p><span class="highlight-text">You made me want to be better, to do better</span>, and that's not something that happens every day
+            <div class="page-
