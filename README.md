@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,19 +12,17 @@
 
         body {
             font-family: 'Georgia', serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #333;
             background: 
                 radial-gradient(circle at 20% 50%, rgba(255, 102, 102, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
                 radial-gradient(circle at 40% 80%, rgba(255, 183, 197, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 0% 100%, rgba(255, 107, 107, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 100%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 30%, rgba(255, 20, 147, 0.2) 0%, transparent 50%),
                 linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #ff9ff3 50%, #54a0ff 75%, #5f27cd 100%);
             min-height: 100vh;
             animation: gradientShift 15s ease infinite;
             background-size: 400% 400%;
+            overflow-x: hidden;
         }
 
         @keyframes gradientShift {
@@ -44,12 +41,10 @@
             height: 100%;
             background-image: 
                 radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(255, 107, 107, 0.3), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(84, 160, 255, 0.4), transparent),
-                radial-gradient(1px 1px at 130px 80px, rgba(255, 159, 243, 0.3), transparent),
-                radial-gradient(2px 2px at 160px 30px, rgba(254, 202, 87, 0.4), transparent);
+                radial-gradient(1px 1px at 40px 70px, rgba(255, 107, 107, 0.3), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(84, 160, 255, 0.4), transparent);
             background-repeat: repeat;
-            background-size: 200px 100px;
+            background-size: 150px 80px;
             animation: sparkle 20s linear infinite;
             pointer-events: none;
             z-index: 1;
@@ -57,13 +52,13 @@
 
         @keyframes sparkle {
             0% { transform: translateY(0px); }
-            100% { transform: translateY(-100px); }
+            100% { transform: translateY(-80px); }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
             position: relative;
             z-index: 2;
         }
@@ -72,31 +67,48 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            box-shadow: 0 4px 20px rgba(31, 38, 135, 0.37);
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 20px;
+            padding: 12px 15px;
+            min-height: 60px;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #667eea;
         }
 
         .nav-menu {
-            display: flex;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             list-style: none;
-            gap: 2rem;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin: 8px 0;
         }
 
         .nav-menu a {
@@ -104,25 +116,30 @@
             color: #333;
             font-weight: 500;
             transition: color 0.3s ease;
+            display: block;
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .nav-menu a:hover,
         .nav-menu a.active {
             color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
         }
 
         .mobile-menu-toggle {
-            display: none;
+            display: block;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: #667eea;
         }
 
         .page-section {
             display: none;
             min-height: 100vh;
-            padding: 100px 0 50px;
+            padding: 80px 0 30px;
             animation: fadeIn 0.8s ease-in-out;
         }
 
@@ -131,7 +148,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -140,11 +157,12 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 50px;
+            border-radius: 15px;
+            padding: 25px 20px;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             position: relative;
             overflow: hidden;
+            margin: 0 10px;
         }
 
         .page-content::before {
@@ -166,7 +184,7 @@
 
         h1 {
             color: #fff;
-            font-size: 3rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -175,6 +193,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: colorFlow 3s ease-in-out infinite;
+            line-height: 1.2;
         }
 
         @keyframes colorFlow {
@@ -184,52 +203,55 @@
 
         h2 {
             color: #764ba2;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         h3 {
             color: #667eea;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
         }
 
         p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
             color: #555;
+            text-align: left;
         }
 
         .hero {
             text-align: center;
-            padding: 50px 0;
+            padding: 20px 0;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 2.5rem;
             background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff, #5f27cd);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
             animation: glow 2s ease-in-out infinite alternate, float 3s ease-in-out infinite;
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255, 107, 107, 0.5), 0 0 30px rgba(255, 107, 107, 0.5), 0 0 40px rgba(255, 107, 107, 0.5); }
-            to { text-shadow: 0 0 30px rgba(84, 160, 255, 0.8), 0 0 40px rgba(84, 160, 255, 0.8), 0 0 50px rgba(84, 160, 255, 0.8); }
+            from { text-shadow: 0 0 20px rgba(255, 107, 107, 0.5); }
+            to { text-shadow: 0 0 30px rgba(84, 160, 255, 0.8); }
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            padding: 0 10px;
         }
 
         .cta-button {
@@ -237,7 +259,7 @@
             background: linear-gradient(45deg, #ff6b6b, #feca57, #ff9ff3, #54a0ff);
             background-size: 300% 300%;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
@@ -245,6 +267,7 @@
             animation: gradientMove 3s ease infinite;
             box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
         }
 
         @keyframes gradientMove {
@@ -253,101 +276,93 @@
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6);
-            animation: gradientMove 1s ease infinite, pulse 0.5s ease infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 10px 30px rgba(255, 107, 107, 0.6); }
-            50% { box-shadow: 0 10px 40px rgba(84, 160, 255, 0.8); }
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
         }
 
         .effort-showcase {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
             border: 2px solid rgba(255, 107, 107, 0.3);
         }
 
         .effort-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
         }
 
         .stat-card {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 20px;
+            padding: 20px 15px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-3px) scale(1.05);
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             animation: countUp 2s ease-out;
         }
 
         @keyframes countUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .timeline {
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 20px 0;
         }
 
         .timeline::after {
             content: '';
             position: absolute;
-            width: 4px;
+            width: 3px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             top: 0;
             bottom: 0;
-            left: 50%;
-            margin-left: -2px;
+            left: 20px;
             animation: timelineGlow 3s ease-in-out infinite;
         }
 
         @keyframes timelineGlow {
-            0%, 100% { box-shadow: 0 0 10px rgba(102, 126, 234, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(118, 75, 162, 0.8); }
+            0%, 100% { box-shadow: 0 0 8px rgba(102, 126, 234, 0.5); }
+            50% { box-shadow: 0 0 15px rgba(118, 75, 162, 0.8); }
         }
 
         .timeline-item {
-            padding: 10px 40px;
+            padding: 10px 10px 10px 50px;
             position: relative;
-            background-color: inherit;
-            width: 50%;
-            margin-bottom: 30px;
+            width: 100%;
+            margin-bottom: 25px;
             animation: slideIn 0.8s ease-out;
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-50px); }
+            from { opacity: 0; transform: translateX(-30px); }
             to { opacity: 1; transform: translateX(0); }
         }
 
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
+            width: 20px;
+            height: 20px;
+            left: 11px;
             background: #667eea;
-            border: 4px solid white;
+            border: 3px solid white;
             top: 15px;
             border-radius: 50%;
             animation: heartbeat 2s ease-in-out infinite;
@@ -358,51 +373,34 @@
             50% { transform: scale(1.1); }
         }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -16px;
-        }
-
-        .timeline-item:nth-child(even) {
-            animation: slideInRight 0.8s ease-out;
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
         .timeline-content {
-            padding: 20px 30px;
+            padding: 20px;
             background: white;
             position: relative;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .timeline-date {
             color: #667eea;
             font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .feelings-section {
             background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(84, 160, 255, 0.1));
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
             border: 2px solid rgba(255, 107, 107, 0.2);
             position: relative;
             overflow: hidden;
@@ -427,61 +425,63 @@
 
         .letter {
             background: linear-gradient(135deg, #f8f9fa, #fff);
-            border-left: 5px solid #667eea;
-            padding: 40px;
-            margin: 30px 0;
-            border-radius: 0 15px 15px 0;
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
             font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            line-height: 1.6;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
         .letter::before {
             content: '💌';
             position: absolute;
-            top: -10px;
-            right: 20px;
-            font-size: 2rem;
+            top: -8px;
+            right: 15px;
+            font-size: 1.5rem;
             animation: bounce 2s ease-in-out infinite;
         }
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         .response-section {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border-radius: 15px;
-            padding: 40px;
-            margin-top: 40px;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
             text-align: center;
             border: 2px solid rgba(102, 126, 234, 0.2);
         }
 
         .contact-buttons {
             display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 25px;
         }
 
         .contact-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
             border-radius: 25px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             position: relative;
             overflow: hidden;
+            width: 80%;
+            max-width: 250px;
         }
 
         .contact-btn::before {
@@ -500,8 +500,8 @@
         }
 
         .contact-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 25px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(102, 126, 234, 0.4);
         }
 
         .fade-in {
@@ -511,7 +511,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -525,89 +525,113 @@
 
         @keyframes floating {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         .highlight-text {
             background: linear-gradient(120deg, rgba(255, 107, 107, 0.3), rgba(84, 160, 255, 0.3));
-            padding: 2px 8px;
-            border-radius: 5px;
+            padding: 2px 6px;
+            border-radius: 4px;
             font-weight: bold;
         }
 
         .confession-box {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-            border: 3px solid rgba(255, 107, 107, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
             text-align: center;
             position: relative;
             animation: confessionGlow 3s ease-in-out infinite;
         }
 
         @keyframes confessionGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(84, 160, 255, 0.4); }
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 107, 107, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(84, 160, 255, 0.4); }
         }
 
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .confession-box p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0;
+        }
+
+        /* Enhanced mobile optimizations */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            .nav-menu.active {
-                display: flex;
+            h1 {
+                font-size: 1.8rem;
             }
 
-            .mobile-menu-toggle {
-                display: block;
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
             }
 
             .page-content {
-                padding: 30px 20px;
+                margin: 0 5px;
+                padding: 20px 15px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .effort-stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
             }
 
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item::after {
-                left: 15px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0%;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
+            .stat-number {
+                font-size: 1.8rem;
             }
 
             .letter {
-                padding: 25px;
-                font-size: 1.1rem;
+                padding: 20px;
+                font-size: 0.95rem;
             }
+
+            .confession-box p {
+                font-size: 1rem;
+            }
+
+            .timeline-item {
+                padding-left: 45px;
+            }
+        }
+
+        /* Ultra-small screens */
+        @media (max-width: 360px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .page-content {
+                padding: 15px 12px;
+            }
+
+            .effort-showcase,
+            .feelings-section,
+            .response-section {
+                padding: 15px;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        * {
+            max-width: 100%;
         }
     </style>
 </head>
@@ -615,14 +639,14 @@
     <nav>
         <div class="container">
             <div class="logo">💖 For Raghavi</div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#effort" class="nav-link">My Journey</a></li>
                 <li><a href="#meeting" class="nav-link">Our Beginning</a></li>
                 <li><a href="#feelings" class="nav-link">My Heart</a></li>
                 <li><a href="#letter" class="nav-link">My Letter</a></li>
             </ul>
-            <button class="mobile-menu-toggle">☰</button>
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
         </div>
     </nav>
 
@@ -635,7 +659,7 @@
                     <p class="hero-subtitle">I spent a whole night learning coding because you deserve something extraordinary</p>
                     
                     <div class="confession-box">
-                        <p style="font-size: 1.3rem; color: #333; margin-bottom: 0;">Hi Raghavi, I know this might seem unconventional, but I wanted to create something special that shows you exactly how I feel and how much effort I'm willing to put in for someone as amazing as you.</p>
+                        <p>Hi Raghavi, I know this might seem unconventional, but I wanted to create something special that shows you exactly how I feel and how much effort I'm willing to put in for someone as amazing as you.</p>
                     </div>
                     
                     <p>I could have just walked up to you and asked you out with a simple "Hey, want to grab coffee?" But you're not just anyone, Raghavi. You're someone who deserves to know that when I like someone, I don't do things halfway.</p>
@@ -699,7 +723,7 @@
         <div class="container">
             <div class="page-content fade-in">
                 <h1>The Day Everything Changed</h1>
-                <p style="text-align: center; margin-bottom: 50px; font-style: italic; font-size: 1.3rem;">The day I met you and knew I had to do something special</p>
+                <p style="text-align: center; margin-bottom: 30px; font-style: italic; font-size: 1.1rem;">The day I met you and knew I had to do something special</p>
                 
                 <div class="timeline">
                     <div class="timeline-item">
@@ -745,4 +769,12 @@
     <section id="feelings" class="page-section">
         <div class="container">
             <div class="page-content fade-in">
-                <h1>What You
+                <h1>What You Mean to Me</h1>
+                
+                <div class="feelings-section">
+                    <h3>💭 My Honest Thoughts</h3>
+                    <p>Raghavi, I want you to know that this website isn't just about showing off what I learned in one night. It's about showing you that you've already made such an impact on my life that I was willing to step completely outside my comfort zone.</p>
+                    
+                    <p>I've met a lot of people, but there's something different about you. Maybe it's the way you seem so genuine, or how your presence just feels... right. I know we've only just met, but I can't shake the feeling that there's something special here worth exploring.</p>
+                    
+                    <p><span class="highlight-text">You made me want to be better, to do better</span>, and that's not something that happens every day
