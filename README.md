@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -640,7 +640,7 @@
                     
                     <p>I could have just walked up to you and asked you out with a simple "Hey, want to grab coffee?" But you're not just anyone, Raghavi. You're someone who deserves to know that when I like someone, I don't do things halfway.</p>
                     
-                    <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I watched countless YouTube tutorials, debugged code until 3 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
+                    <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I tried countless ideas, themes, debugged code until 6 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
                     
                     <a href="#effort" class="cta-button nav-link">See My Journey</a>
                 </div>
