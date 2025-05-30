@@ -310,8 +310,8 @@
                     <p>I hope you'll accept my invitation to meet for coffee. I'd love to get to know you better.</p>
                     
                     <div class="contact-section">
-                        <a href="tel:+919006291057" class="cta-button">📱 Call Me: 79006291057</a>
-                        <a href="sms:+919006291057" class="cta-button">💬 Text Me: 79006291057</a>
+                        <a href="tel:+917906291057" class="cta-button">📱 Call Me: 7906291057</a>
+                        <a href="sms:+917906291057" class="cta-button">💬 Text Me: 7906291057</a>
                     </div>
                 </div>
             </div>
