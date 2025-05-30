@@ -301,7 +301,7 @@
                     
                     <p>I could have just walked up to you and asked you out with a simple "Hey, want to grab coffee?" But you're not just anyone, Raghavi. You're someone who deserves to know that when I like someone, I don't do things halfway.</p>
                     
-                    <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I tried countless ideas, themes, debugged code until 6 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
+                    <p>So instead of a casual approach, I spent sleepless nights learning HTML, CSS, and JavaScript. I tried countless ideas, themes, debugged code until 5 AM, and redesigned this website probably 50 times – all because I wanted to create something as unique and special as you are.</p>
                     
                     <p>This website represents more than just code - it represents dedication, genuine interest, and the belief that extraordinary people deserve extraordinary gestures. <span class="highlight-text">You inspired me to learn something completely new in one night</span>, and that says everything about how I feel about you.</p>
                     
@@ -315,6 +315,9 @@
                     </div>
                 </div>
             </div>
+             <div class="confession-box">
+                        <p>Hi Raghavi, I know this might seem unconventional, but I wanted to create something special that shows you exactly how I feel and how much effort I'm willing to put in for someone as amazing as you.</p>
+                    </div>
         </div>
     </section>
 </body>
