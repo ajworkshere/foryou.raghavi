@@ -316,7 +316,7 @@
                 </div>
             </div>
              <div class="confession-box">
-                        <p>Hi Raghavi, I know this might seem unconventional, but I wanted to create something special that shows you exactly how I feel and how much effort I'm willing to put in for someone as amazing as you.</p>
+                        <p>Raghavi, our bond is still nascent, but it has already brought warmth and light into my life. I treasure the moments we've shared, and the potential for growth that lies before us. You inspire me with your kindness, positivity, and genuine nature, and I'm grateful for your presence in my life. This website is a celebration of the promise and joy that our connection holds.</p>
                     </div>
         </div>
     </section>
